@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { formatDistanceToNow } from 'date-fns';
-import { zhCN } from 'date-fns/locale';
-import { ArrowUpRight } from 'lucide-react';
+import Link from "next/link";
+import { formatDistanceToNow } from "date-fns";
+import { zhCN } from "date-fns/locale";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 interface Story {
   id: number;
@@ -21,7 +21,14 @@ interface StoryListProps {
   currentPage: number;
 }
 
-export default function StoryList({ stories, type, currentPage }: StoryListProps) {
+export default function StoryList({
+  stories,
+  type,
+  currentPage,
+}: StoryListProps) {
+  // 判断是否是搜索结果（搜索结果不需要分页）
+  const isSearchResult = type === "search" || !type;
+
   return (
     <div className="space-y-4">
       {stories.map((story) => (
@@ -59,6 +66,16 @@ export default function StoryList({ stories, type, currentPage }: StoryListProps
                     locale: zhCN,
                   })}
                 </span>
+                <span className="mx-2">•</span>
+                <a
+                  href={`https://news.ycombinator.com/item?id=${story.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-600 inline-flex items-center"
+                >
+                  原帖
+                  <ExternalLink className="w-3 h-3 ml-0.5" />
+                </a>
               </div>
             </div>
           </div>
@@ -68,25 +85,27 @@ export default function StoryList({ stories, type, currentPage }: StoryListProps
         </article>
       ))}
 
-      <div className="flex justify-between items-center mt-6">
-        <Link
-          href={`/?type=${type}&page=${Math.max(1, currentPage - 1)}`}
-          className={`px-4 py-2 rounded-lg border ${
-            currentPage === 1
-              ? 'opacity-50 cursor-not-allowed'
-              : 'hover:bg-gray-50'
-          }`}
-        >
-          上一页
-        </Link>
-        <span className="text-sm text-gray-500">第 {currentPage} 页</span>
-        <Link
-          href={`/?type=${type}&page=${currentPage + 1}`}
-          className="px-4 py-2 rounded-lg border hover:bg-gray-50"
-        >
-          下一页
-        </Link>
-      </div>
+      {!isSearchResult && (
+        <div className="flex justify-between items-center mt-6">
+          <Link
+            href={`/?type=${type}&page=${Math.max(1, currentPage - 1)}`}
+            className={`px-4 py-2 rounded-lg border ${
+              currentPage === 1
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-gray-50"
+            }`}
+          >
+            上一页
+          </Link>
+          <span className="text-sm text-gray-500">第 {currentPage} 页</span>
+          <Link
+            href={`/?type=${type}&page=${currentPage + 1}`}
+            className="px-4 py-2 rounded-lg border hover:bg-gray-50"
+          >
+            下一页
+          </Link>
+        </div>
+      )}
     </div>
   );
-} 
+}

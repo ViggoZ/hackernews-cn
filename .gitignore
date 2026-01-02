@@ -35,3 +35,88 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# General
+.jarvis
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+.venv/
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+.ipynb_checkpoints
+.pyre/
+.pytype/
+
+# Rust
+target/
+
+# Node
+node_modules/
+pnpm-debug.log*
+lerna-debug.log*
+dist/
+coverage/
+.turbo/
+.next/
+.nuxt/
+out/
+
+# Go
+vendor/
+coverage.out
+
+# Java
+target/
+*.class
+.gradle/
+build/
+out/
+
+# C/C++
+build/
+cmake-build-*/
+*.o
+*.a
+*.so
+*.obj
+*.dll
+*.dylib
+*.exe
+*.pdb
+
+# .NET
+obj/
