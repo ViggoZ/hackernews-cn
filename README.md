@@ -38,20 +38,24 @@
 ## 本地开发
 
 1. 克隆项目
-\`\`\`bash
+
+```bash
 git clone https://github.com/ViggoZ/hackernews-cn.git
 cd hackernews-cn
-\`\`\`
+```
 
 2. 安装依赖
-\`\`\`bash
+
+```bash
 pnpm install
-\`\`\`
+```
 
 3. 配置环境变量
-\`\`\`bash
+
+```bash
 cp .env.example .env
-\`\`\`
+```
+
 然后编辑 .env 文件，填入必要的环境变量：
 - DATABASE_URL: PostgreSQL 数据库连接URL
 - OPENAI_API_KEY: OpenAI API密钥
@@ -59,14 +63,16 @@ cp .env.example .env
 - CRON_SECRET: 定时任务密钥
 
 4. 初始化数据库
-\`\`\`bash
-pnpm prisma db push
-\`\`\`
 
-5. 启动开发服务器
-\`\`\`bash
+```bash
+pnpm prisma db push
+```
+
+7. 启动开发服务器
+
+```bash
 pnpm dev
-\`\`\`
+```
 
 访问 http://localhost:3000 查看应用。
 
@@ -91,7 +97,7 @@ pnpm dev
 
 ## 项目结构
 
-\`\`\`
+```
 ├── src/
 │   ├── app/          # Next.js 应用路由和页面
 │   ├── components/   # React 组件
@@ -100,7 +106,7 @@ pnpm dev
 ├── prisma/          # 数据库模型和迁移
 ├── public/          # 静态资源
 └── ...配置文件
-\`\`\`
+```
 
 ## 功能特性
 
