@@ -1,5 +1,10 @@
 # HackerNews 中文版
 
+> [!IMPORTANT]
+> **本项目已停止维护，并已归档。** HackerNews 中文版已迁移到 **[decohack.com/hn/](https://decohack.com/hn/)**（HN 每日热榜）：每天一期，当天热门前 30 中文标题，另有 Show HN / Ask HN 精选。原站 hn.aimaker.dev 已 301 跳转到新地址。
+>
+> 下面的代码保留作参考，不再更新。
+
 这是一个使用现代技术栈构建的 HackerNews 中文版网站，提供实时翻译的英文科技新闻和讨论。
 
 ## 项目特点
